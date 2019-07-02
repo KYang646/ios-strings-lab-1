@@ -98,27 +98,51 @@ Write code that switches on a string, given the following conditions:
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
+```
+var totallyAString = ""
+var totallyAString: Character = "K"
+
+```
+
 ***
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
+
+"el niño" == "el ni\u{0249}o"
+"café" == "\u{63}\u{61}\u{66}\u{E9}"
 
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
 
+```
+print("\u{48}\u{45}\u{4C}\u{4C}\u{4F}\u{20}\u{57}\u{4F}\u{52}\u{4C}\u{44}\u{21}")
+```
+
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
+
+```
+print("\u{4B}\u{69}\u{6D}\u{62}\u{61}\u{6C}\u{6C}")
+
+```
 
 ***
 ## Question 11
 
 **Using only Unicode**, print out `"HELLO WORLD!"` in another language.
 
+```
+
+print("\u{4F60}\u{597D}\u{FF0C}\u{4E16}\u{754C}")
+
+```
 ***
+
 ## Question 12
 
 Print the below flower box using the following information.
@@ -140,6 +164,25 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 ```
+```
+var flower = "\u{2698}"
+var verticalSymbol = "\u{007c}"
+var horozontalSymbol = "\u{005f} "
+let outline = String(repeating: horozontalSymbol, count : 11)
+
+for _ in 1...11 {
+print(horozontalSymbol, terminator: " ")
+}
+print(outline)
+print()
+for _ in 1...7 {
+for _ in 1...5 {
+print("\(verticalSymbol) \(flower)", terminator: " ")
+}
+print(verticalSymbol)
+}
+print(outline)
+```
 
 ***
 ## Question 13
@@ -156,6 +199,34 @@ Chess Board:
 
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+```
+```
+var rookWhite = "\u{2656}"
+var knightWhite = "\u{2658}"
+var bishopWhite = "\u{2657}"
+var queenWhite = "\u{2655}"
+var kingWhite = "\u{2654}"
+var pawnWhite = "\u{2659}"
+var rookBlack = "\u{265C}"
+var knightBlack = "\u{265E}"
+var bishopBlack = "\u{265D}"
+var queenBlack = "\u{265B}"
+var kingBlack = "\u{265A}"
+var pawnBlack = "\u{265F}"
+
+print("\(rookWhite) \(knightWhite) \(bishopWhite) \(queenWhite) \(kingWhite) \(bishopWhite) \(knightWhite) \(rookWhite)")
+for i in 1...8 {
+print("\(pawnWhite)", terminator: " ")
+}
+for i in 1...4 {
+print("")
+}
+for i in 1...8 {
+print("\(pawnBlack)", terminator: " ")
+}
+print("")
+print("\(rookBlack) \(knightBlack) \(bishopBlack) \(queenBlack) \(kingBlack) \(bishopBlack) \(knightBlack) \(rookBlack)")
+
 ```
 
 ***
