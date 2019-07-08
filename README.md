@@ -109,8 +109,11 @@ var totallyAString: Character = "K"
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+```
 "el niño" == "el ni\u{0249}o"
 "café" == "\u{63}\u{61}\u{66}\u{E9}"
+
+```
 
 ***
 ## Question 9
@@ -238,6 +241,7 @@ You are given a string stored in the variable `aString`. Create new string named
 var aString = "Replace the letter e with \*"
 // Your code here
  ```
+ 
 
 Example:
 
@@ -246,6 +250,14 @@ Input:
 
 Expected values:
 `replacedString = "R*plac* th* l*tt*r * with *"`
+
+```
+var aString = "Replace the letter e with *"
+var replacedString = ""
+
+replacedString = aString.replacingOccurrences(of: "e", with: "*")
+print (replacedString)
+```
 
 ***
 ## Question 15
@@ -257,6 +269,11 @@ var aString = "this string has 29 characters"
 var reverse = ""
 
 // Your code here
+```
+```
+let stringReversed = String(aString.reversed())
+print(stringReversed)
+
 ```
 
 Example:
@@ -276,6 +293,16 @@ let aString = "anutforajaroftuna"
 
 // Your code here
 ```
+```
+let aString = "anutforajaroftuna"
+var revString = String(aString.reversed())
+
+if aString == revString {
+print (true)
+}else {
+print(false)
+}
+```
 
 Example 1:
 Input:
@@ -290,6 +317,17 @@ Input:
 
 Output:
 `false`
+
+```
+var aString = "Hello"
+var revString = String(aString.reversed())
+
+if aString == revString {
+print (true)
+}else {
+print(false)
+}
+```
 
 ***
 ## Question 17
@@ -320,6 +358,12 @@ on
 separate
 lines
 ```
+```
+var problem = "split this string into words and print them on separate lines"
+let revisedSplit = "split\nthis\nstring\ninto\nwords\nand\nprint\nthem\non\nseparate\nlines"
+print(revisedSplit)
+
+```
 
 ***
 ## Question 18
@@ -330,6 +374,13 @@ You are given a string stored in variable `problem`. Write code that prints the 
 var problem = "find the longest word in the problem description"
 
 // Your code here
+```
+```
+var problem = "find the longest word in the problem description"
+var newString = problem.components(separatedBy: " ")
+var longestWord = String(newString.max{$0.count < $1.count} ?? "nothing to see here")
+
+print(longestWord)
 ```
 
 Example:
@@ -350,6 +401,22 @@ Given a string in English, create a tuple containing the number of vowels and co
 let vowels = "aeiou"
 let consonants = "bcdfghjklmnpqrstvwxyz"
 let input = "Count how many vowels I have!"
+```
+```
+var vowelCount = 0
+var consonantsCount = 0
+
+for char in input {
+if vowels.contains(char) {
+vowelCount += 1
+} else if consonants.contains(char) {
+consonantsCount += 1
+}
+}
+
+var bothCounts = (vowels:vowelCount,consonants:consonantsCount)
+
+print(bothCounts)
 ```
 
 ***
