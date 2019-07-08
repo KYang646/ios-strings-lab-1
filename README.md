@@ -93,6 +93,23 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
 
+```
+var someRandoString = "telepathic"
+
+let indexCount = someRandoString.count - 1
+if someRandoString.count % 2 == 0 {
+print(someRandoString)
+} else {
+for index in 0...indexCount {
+if index % 2 != 0 {
+let currentIndex = someRandoString.index(someRandoString.startIndex, offsetBy: index)
+print(someRandoString[currentIndex], terminator: " ")
+}
+
+}
+}
+```
+
 ***
 ## Question 7
 
@@ -112,6 +129,9 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 ```
 "el niño" == "el ni\u{0249}o"
 "café" == "\u{63}\u{61}\u{66}\u{E9}"
+"Über" == "\u{DC}\u{62}\u{65}\u{72}"
+"Ohio" == "\u{4F}\u{68}\u{69}\u{6F}"
+"Hello World" == "\u{48}\u{65}\u{6C}\u{6C}\u{6F}\u{20}\u{57}\u{6F}\u{72}\u{6C}\u{64}""
 
 ```
 
@@ -376,9 +396,15 @@ var problem = "find the longest word in the problem description"
 // Your code here
 ```
 ```
-var problem = "find the longest word in the problem description"
-var newString = problem.components(separatedBy: " ")
-var longestWord = String(newString.max{$0.count < $1.count} ?? "nothing to see here")
+let someWordz = problem.components(separatedBy: " ")
+
+var longestWord = ""
+
+for word in someWordz {
+if word.count > longestWord.count {
+longestWord = word
+}
+}
 
 print(longestWord)
 ```
@@ -407,7 +433,7 @@ var vowelCount = 0
 var consonantsCount = 0
 
 for char in input {
-if vowels.contains(char) {
+if vowels.conwtains(char) {
 vowelCount += 1
 } else if consonants.contains(char) {
 consonantsCount += 1
@@ -430,5 +456,16 @@ Example:
 Input: `"How are you doing this Monday?"`
 
 Output: `7`
+
+```
+var theInput = "How are you doing this Monday?"
+var newInput = theInput.split(separator: " ")
+print(newInput)
+var lastWord = newInput.last
+print(lastWord!)
+
+var lastWordCount = lastWord?.count
+print(lastWordCount!)
+```
 
 ***
